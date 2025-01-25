@@ -22,6 +22,10 @@ No configuration is required for this plugin.
 Once the plugin is installed and enabled, you should see a new layer called "Clan Bases" in your Squaremap map.
 Map automatically updates every 5 minutes.
 
+## Todo
+- [ ] Clan Claims
+- [ ] Hide Players in War
+
 ## Contributing
 
 Contributions are welcome!
