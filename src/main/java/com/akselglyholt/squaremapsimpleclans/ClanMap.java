@@ -33,7 +33,7 @@ public final class ClanMap extends JavaPlugin {
   private void saveDefaultResources() {
     // List all resources in the resources folder
     String[] resources = {
-        "config.yml",
+        // "config.yml",
         "clanhome.png"
     };
 
