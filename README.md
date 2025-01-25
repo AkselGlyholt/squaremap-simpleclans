@@ -2,6 +2,13 @@
 
 This plugin integrates [SimpleClans](https://github.com/RoinujNosde/SimpleClans) with [Squaremap](https://github.com/jpenilla/squaremap).
 
+## Features
+
+Currently it only works in the `world` world, but I will add support for other worlds in the future. Release 1.0.0 will support all worlds.
+
+- Displays clan bases on your map.
+- Automatically updates the map every 5 minutes.
+
 ## Installation
 
 1. Download the latest release from the [releases page](https://github.com/AkselGlyholt/Squaremap-SimpleClans/releases).
