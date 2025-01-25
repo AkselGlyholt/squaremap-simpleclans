@@ -1,4 +1,4 @@
-name: Squaremap - SimpleClans Integration
+name: squaremap-simpleclans
 version: 1.0.0
 main: com.akselglyholt.squaremapsimpleclans.ClanMapPlugin
 api-version: 1.13
