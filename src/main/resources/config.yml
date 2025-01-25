@@ -1,7 +1,0 @@
-enabled: true
-
-markers:
-  - image: images.clanicon.png
-    key: clanhome
-    image-height: 32
-    image-width: 32
