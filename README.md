@@ -16,6 +16,10 @@ This plugin integrates [SimpleClans](https://github.com/RoinujNosde/SimpleClans)
 ## Configuration
 
 No configuration is required for this plugin.
+But you can change the marker icon by replacing the `clanhome.png` file in the resources folder.
+It's recommended to use a 32x32 pixel image.
+
+Make sure the files name is `clanhome.png`.
 
 ## Usage
 
