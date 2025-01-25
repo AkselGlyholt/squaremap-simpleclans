@@ -4,9 +4,7 @@ This plugin integrates [SimpleClans](https://github.com/RoinujNosde/SimpleClans)
 
 ## Features
 
-Currently it only works in the `world` world, but I will add support for other worlds in the future. Release 1.0.0 will support all worlds.
-
-- Displays clan bases on your map.
+- Displays clan bases on your map, with the clan's name and tag, in each world.
 - Automatically updates the map every 5 minutes.
 
 ## Installation
