@@ -1,5 +1,5 @@
 name: squaremap-simpleclans
 version: 1.0.0
-main: com.akselglyholt.squaremapsimpleclans.ClanMapPlugin
+main: com.akselglyholt.squaremapsimpleclans.ClanMap
 api-version: 1.13
 depend: [squaremap, SimpleClans]
