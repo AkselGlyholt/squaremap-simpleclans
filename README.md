@@ -6,6 +6,7 @@ This plugin integrates [SimpleClans](https://github.com/RoinujNosde/SimpleClans)
 
 - Displays clan bases on your map, with the clan's name and tag, in each world.
 - Automatically updates the map every 5 minutes.
+- Hide members who are currently in war
 
 ## Installation
 
