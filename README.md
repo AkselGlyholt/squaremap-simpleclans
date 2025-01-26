@@ -25,7 +25,7 @@ Map automatically updates every 5 minutes.
 
 ## Todo
 - [ ] Clan Claims
-- [ ] Hide Players in War
+- [x] Hide Players in War
 
 ## Contributing
 
