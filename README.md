@@ -6,6 +6,7 @@ This plugin integrates [SimpleClans](https://github.com/RoinujNosde/SimpleClans)
 
 - Displays clan bases on your map, with the clan's name and tag, in each world.
 - Automatically updates the map every 5 minutes.
+- Hide members who are currently in war
 
 ## Installation
 
@@ -25,6 +26,10 @@ Make sure the files name is `clanhome.png`.
 
 Once the plugin is installed and enabled, you should see a new layer called "Clan Bases" in your Squaremap map.
 Map automatically updates every 5 minutes.
+
+## Todo
+- [ ] Clan Claims
+- [x] Hide Players in War
 
 ## Contributing
 
