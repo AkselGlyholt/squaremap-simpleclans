@@ -1,12 +1,16 @@
 package com.akselglyholt.squaremapsimpleclans.task;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import com.akselglyholt.squaremapsimpleclans.ClanMap;
 import com.akselglyholt.squaremapsimpleclans.hook.SimpleClansHook;
-import com.akselglyholt.squaremapsimpleclans.hook.SquaremapHook;
 
 import net.sacredlabyrinth.phaed.simpleclans.Clan;
 import net.sacredlabyrinth.phaed.simpleclans.SimpleClans;
@@ -16,6 +20,7 @@ import xyz.jpenilla.squaremap.api.Key;
 import xyz.jpenilla.squaremap.api.MapWorld;
 import xyz.jpenilla.squaremap.api.Point;
 import xyz.jpenilla.squaremap.api.SimpleLayerProvider;
+import xyz.jpenilla.squaremap.api.SquaremapProvider;
 import xyz.jpenilla.squaremap.api.marker.Icon;
 import xyz.jpenilla.squaremap.api.marker.Marker;
 import xyz.jpenilla.squaremap.api.marker.MarkerOptions;
@@ -65,9 +70,13 @@ public final class SquaremapTask extends BukkitRunnable {
     // Register each clan makere on the map
     for (Clan clan : clans) {
       Location homeLocation = clan.getHomeLocation();
+      // Create custom icon for clan base
+      final Key CUSTOM_CLAN_BASE_KEY = Key.of("clanhome-" + clan.getTag());
 
       // Check if clan home world is the same as the world we are in
       if (homeLocation == null || homeLocation.getWorld() != this.bukkitWorld) {
+        // Remove the marker if it exists
+        this.provider.removeMarker(CUSTOM_CLAN_BASE_KEY);
         continue;
       }
 
@@ -76,7 +85,21 @@ public final class SquaremapTask extends BukkitRunnable {
 
       // Create an Icon Point for the clan base
       try {
-        Key imageKey = Key.of(SquaremapHook.CLAN_BASE_KEY.toString());
+        // Load clanhome image from resources folder
+        if (!SquaremapProvider.get().iconRegistry().hasEntry(CUSTOM_CLAN_BASE_KEY)) {
+          try {
+            final BufferedImage image = ImageIO.read(new File(plugin.getDataFolder(), "clanhome.png"));
+            SquaremapProvider.get().iconRegistry().register(CUSTOM_CLAN_BASE_KEY, image);
+            plugin.getLogger().info("Clan base icon successfully registered." + clan.getTag());
+          } catch (Exception e) {
+            plugin.getLogger().severe("Failed to load image from resources folder: " + e.getMessage());
+          }
+        } else {
+          plugin.getLogger().info("Clan base icon already registered.");
+        }
+
+        // Generate a unique key for each clan base
+        Key imageKey = Key.of("clanhome-" + clan.getTag());
 
         // Create the icon marker using the image and the point
         Icon iconMarker = Marker.icon(homePoint, imageKey, 32, 32);
