@@ -75,8 +75,7 @@ public final class SquaremapTask extends BukkitRunnable {
 
       // Check if clan home world is the same as the world we are in
       if (homeLocation == null || homeLocation.getWorld() != this.bukkitWorld) {
-        // Remove the marker if it exists
-        this.provider.removeMarker(CUSTOM_CLAN_BASE_KEY);
+        // Continue to next clan
         continue;
       }
 
