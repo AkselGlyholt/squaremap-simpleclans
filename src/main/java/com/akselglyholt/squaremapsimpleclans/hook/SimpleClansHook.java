@@ -20,7 +20,7 @@ public final class SimpleClansHook {
 
     // Start the HideWarringClansTask to update every 60 seconds (1 minute)
     this.hideWarringClansTask = new HideWarringClansTask();
-    this.hideWarringClansTask.runTaskTimerAsynchronously(plugin, 0L, 20L * 5 /* 60 */); // Checks for wars every minute
+    this.hideWarringClansTask.runTaskTimerAsynchronously(plugin, 0L, 20L * 60); // Checks for wars every minute
   }
 
   public SimpleClans getSimpleClans() {

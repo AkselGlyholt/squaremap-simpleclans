@@ -45,7 +45,7 @@ public final class SquaremapHook {
 
       // Task for periodically updating markers every 10 seconds
       final SquaremapTask task = new SquaremapTask(plugin, world, provider, simpleClansHook);
-      task.runTaskTimerAsynchronously(plugin, 20L, 20L * 5 /* 300 */);
+      task.runTaskTimerAsynchronously(plugin, 20L, 20L * 300); // 300 seconds - 5 minutes
 
       this.tasks.put(world.identifier(), task);
     }
