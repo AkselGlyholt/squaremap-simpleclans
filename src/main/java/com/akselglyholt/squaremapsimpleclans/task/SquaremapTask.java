@@ -1,16 +1,12 @@
 package com.akselglyholt.squaremapsimpleclans.task;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-
-import javax.imageio.ImageIO;
-
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import com.akselglyholt.squaremapsimpleclans.ClanMap;
 import com.akselglyholt.squaremapsimpleclans.hook.SimpleClansHook;
+import com.akselglyholt.squaremapsimpleclans.hook.SquaremapHook;
 
 import net.sacredlabyrinth.phaed.simpleclans.Clan;
 import net.sacredlabyrinth.phaed.simpleclans.SimpleClans;
@@ -87,10 +83,9 @@ public final class SquaremapTask extends BukkitRunnable {
         // Load clanhome image from resources folder
         if (!SquaremapProvider.get().iconRegistry().hasEntry(CUSTOM_CLAN_BASE_KEY)) {
           try {
-            final BufferedImage image = ImageIO.read(new File(plugin.getDataFolder(), "clanhome.png"));
-            SquaremapProvider.get().iconRegistry().register(CUSTOM_CLAN_BASE_KEY, image);
+            SquaremapProvider.get().iconRegistry().register(CUSTOM_CLAN_BASE_KEY, SquaremapHook.CLAN_BASE_IMAGE);
           } catch (Exception e) {
-            plugin.getLogger().severe("Failed to load image from resources folder: " + e.getMessage());
+            plugin.getLogger().severe("Failed to register image for clan " + clan.getTag() + ": " + e.getMessage());
           }
         }
 

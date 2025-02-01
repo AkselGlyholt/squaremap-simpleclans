@@ -30,7 +30,13 @@ public final class ClanMap extends JavaPlugin {
 
   @Override
   public void onDisable() {
-    this.squaremapHook.disable();
+    if (this.squaremapHook != null) {
+      this.squaremapHook.disable();
+    }
+
+    if (this.simpleClansHook != null) {
+      this.simpleClansHook.disable();
+    }
 
     for (MapWorld world : SquaremapProvider.get().mapWorlds()) {
       world.layerRegistry().unregister(SquaremapHook.CLAN_BASE_LAYER_KEY);
