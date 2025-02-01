@@ -7,6 +7,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.akselglyholt.squaremapsimpleclans.hook.SimpleClansHook;
 import com.akselglyholt.squaremapsimpleclans.hook.SquaremapHook;
 
+import xyz.jpenilla.squaremap.api.MapWorld;
+import xyz.jpenilla.squaremap.api.SquaremapProvider;
+
 public final class ClanMap extends JavaPlugin {
   private SquaremapHook squaremapHook;
   private SimpleClansHook simpleClansHook;
@@ -28,6 +31,10 @@ public final class ClanMap extends JavaPlugin {
   @Override
   public void onDisable() {
     this.squaremapHook.disable();
+
+    for (MapWorld world : SquaremapProvider.get().mapWorlds()) {
+      world.layerRegistry().unregister(SquaremapHook.CLAN_BASE_LAYER_KEY);
+    }
   }
 
   private void saveDefaultResources() {

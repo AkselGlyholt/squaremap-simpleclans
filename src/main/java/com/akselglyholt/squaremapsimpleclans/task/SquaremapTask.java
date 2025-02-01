@@ -90,12 +90,9 @@ public final class SquaremapTask extends BukkitRunnable {
           try {
             final BufferedImage image = ImageIO.read(new File(plugin.getDataFolder(), "clanhome.png"));
             SquaremapProvider.get().iconRegistry().register(CUSTOM_CLAN_BASE_KEY, image);
-            plugin.getLogger().info("Clan base icon successfully registered." + clan.getTag());
           } catch (Exception e) {
             plugin.getLogger().severe("Failed to load image from resources folder: " + e.getMessage());
           }
-        } else {
-          plugin.getLogger().info("Clan base icon already registered.");
         }
 
         // Generate a unique key for each clan base
