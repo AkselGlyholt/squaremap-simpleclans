@@ -29,6 +29,7 @@ Map automatically updates every 5 minutes.
 
 ## Todo
 - [ ] Clan Claims, with GriefPrevention/other claim plugins
+- [ ] Players clan shown on their player tag
 - [x] Hide Players in War
 
 ## Contributing
