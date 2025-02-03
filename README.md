@@ -28,7 +28,7 @@ Once the plugin is installed and enabled, you should see a new layer called "Cla
 Map automatically updates every 5 minutes.
 
 ## Todo
-- [ ] Clan Claims
+- [ ] Clan Claims, with GriefPrevention/other claim plugins
 - [x] Hide Players in War
 
 ## Contributing
