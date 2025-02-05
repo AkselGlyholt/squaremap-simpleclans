@@ -19,7 +19,12 @@ public final class ClanMap extends JavaPlugin {
     // Ensure the plugin's data folder exists
     File folder = this.getDataFolder();
     if (!folder.exists()) {
-      folder.mkdirs(); // Create the data folder if it doesn't exist
+      boolean createdFolder = folder.mkdirs(); // Create the data folder if it doesn't exist
+
+      if (!createdFolder) {
+        this.getLogger().severe("Couldn't create data folder!");
+        return;
+      }
     }
 
     saveDefaultResources();
